@@ -1,0 +1,50 @@
+body {
+	font-size: 8px;
+	font-family: arial, helvetica, sans-serif;
+}
+
+table.classHeader td{
+
+	font-size: 15px;
+}
+
+table.table thead td {
+	padding: 5px;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #023c75;
+    color: white;
+    border-left: 1px solid #023c75;
+}
+
+table.table tbody td {
+	padding: 5px;
+}
+
+table.table tbody tr:nth-child(even) td {
+	background-color: #F2F2F2;
+}
+
+tbody tr td:nth-child(3), 
+         td:nth-child(8) {
+    text-align: center;
+}
+
+tbody tr td:nth-child(2) {
+    white-space: nowrap;
+}
+
+tbody tr td:nth-child(4), 
+         td:nth-child(5), 
+         td:nth-child(6), 
+         td:nth-child(7) {
+	text-align: right;
+}
+
+table.table tfoot td {
+	padding: 5px;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #023c75;
+    color: white;
+}
