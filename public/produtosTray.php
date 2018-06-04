@@ -386,9 +386,11 @@ $empresas = empresaDAO::getInstance()->selectEmpresas();
 
             $('#btnExportar').on('click', function(){
 
-                var empresaId = $('#empresaId');
+                if (confirm("Confirma Envio?")) {
 
-                $.each(rows_selected, function(index, el) {
+                  var empresaId = $('#empresaId');
+
+                  $.each(rows_selected, function(index, el) {
 
                     $.ajax({
                       url: "../includes/ajaxTrayCommerce.php",
@@ -415,18 +417,8 @@ $empresas = empresaDAO::getInstance()->selectEmpresas();
                         alert("Processo Finalizado");
                         table.ajax.reload(null, false);
                     }      
-                    
-                    /*$.post(
-                            "../includes/ajaxTrayCommerce.php",
-                            {
-                                "empresaCodigo" : empresaId.val(),
-                                "produtoCodigo" : el
-                            }
-                    ).done(function(data){
-                        alert(data);
-                        table.ajax.reload(null, false);
-                    });  */             
-                });
+                  });
+                }
 
             });
 
