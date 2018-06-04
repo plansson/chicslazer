@@ -272,10 +272,6 @@ $empresas = empresaDAO::getInstance()->selectEmpresas();
                 "processing": true,
                 "serverSide": true,
                 "ajax": {
-                    beforeSend: function(jqXHR){
-                      console.log(jqXHR);
-                      console.log(jqXHR.overrideMimeType);
-                    },
                     type : "POST",
                     url: '../includes/ajaxProdutos.php',
                     data: function(d){

@@ -136,6 +136,8 @@ class produtoDAO{
 	
 			$ret['data'] = $stmt->fetch();
 			$ret['total'] = $stmt->rowCount();
+			
+			//echo json_encode($stmt->debugDumpParams());
 	
 			return $ret;
 	

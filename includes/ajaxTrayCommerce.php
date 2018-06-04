@@ -26,6 +26,8 @@ $result = array();
 try {
 	
 	$result = produtoDAO::getInstance()->selectProdutoPorCodigo($e, $p);
+	//echo json_encode($result);
+	//exit();
 	
 	if ($result['total'] != 0) {
 		
@@ -37,7 +39,8 @@ try {
 			
 		} catch (Exception $e) {
 			
-			
+			$result['error'] = "Código: " . $e->getCode() . " Mensagem: " . $e->getMessage();
+			echo json_encode($result);		
 			
 		}
 			
@@ -62,7 +65,7 @@ try {
  				  ->setStock($produtoEco->STOCK)
  				  ->setCategoryId($categoriaId)
  				  ->setAvailable($produtoEco->STOCK > 0?1:0)
-				  ->setReference($produtoEco->REFERENCIA)
+				  ->setReference($produtoEco->CODIGO)
 // 				  ->setPaymentOption($payment_option)
 // 				  ->setRelatedCategories($related_categories)
 // 				  ->setReleaseDate($release_date)
@@ -81,6 +84,7 @@ try {
 	
 } catch (Exception $e) {
 	$result['error'] = "Código: " . $e->getCode() . " Mensagem: " . $e->getMessage();
+	echo json_encode($result);
 }
 
 
