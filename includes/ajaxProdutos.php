@@ -52,7 +52,7 @@ IF($saldo != 0){
 
 }
 
-if(isset($_POST['search']['value']) && !empty(isset($_POST['search']['value']))){
+if(isset($_POST['search']['value']) && !empty($_POST['search']['value'])){
 
 	$sqlRecord .= " AND (
 		P.PRODUTO LIKE '%".$_POST['search']['value']."%' OR

@@ -399,7 +399,7 @@ $empresas = empresaDAO::getInstance()->selectEmpresas();
                 ).done(function(data){
                   console.log('Produto: ' + data);
                   $.ajax({
-                      url: 'http://plansson.dev.br/loja/importaProduto.php',
+                      url: 'https://chicspresente.com.br/importaProduto.php',
                       type: 'POST',
                       dataType: 'json',
                       crossDomain: true,
